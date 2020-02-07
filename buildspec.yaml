@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # update packages
+      - apt-get update -y
+      - npm install -g knex
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+  post_build:
+    commands:
+
+      # Install runtime dependencies
+      - npm install --production
+      # - npm test
+      - npm run migrate
+
+      - echo Build completed on `date`
+artifacts:
+  type: zip
+  files:
+    - README.md
+    - index.js
+    - package.json
+    - .eslintrc.json
+    - "*.js"
+    - knexfile.js
+    - config/*
+    - db/**/*
+    - public/*
+    - src/**/*
+    - src/*
+    - test/*
+    - test/**/*
+    - node_modules/**/*
