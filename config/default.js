@@ -1,7 +1,7 @@
 
 module.exports = {
   host: "localhost",
-  port: 8081,
+  port: 3030,
   public: "../public/",
   paginate: {
     default: 10,
@@ -39,6 +39,11 @@ module.exports = {
   },
   postgres: {
     client: "pg",
-    connection: process.env.POSTGRESQLCONNSTR_DB
+    connection: {
+      host : process.env.DB_HOST,
+      user : process.env.DB_USER,
+      password : process.env.DB_PASSWORD,
+      database : process.env.DB_NAME
+    }
   }
 };
