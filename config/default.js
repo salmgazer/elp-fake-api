@@ -1,5 +1,5 @@
 
-module.exports = ({
+module.exports = {
   host: "localhost",
   port: 3030,
   public: "../public/",
@@ -41,4 +41,4 @@ module.exports = ({
     client: "pg",
     connection: process.env.POSTGRESQLCONNSTR_DB
   }
-});
+};
