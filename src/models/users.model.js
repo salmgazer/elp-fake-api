@@ -11,19 +11,17 @@ module.exports = function (app) {
   db.schema.hasTable(tableName).then(exists => {
     if(!exists) {
       db.schema.createTable(tableName, table => {
-        table.increments('id'); /*@todo remove from core-api */
-        table.uuid('userId').notNullable();
+        table.uuid('userId').notNullable().primary();
         table.string('email');
         table.string('password').notNullable();
-        table.string('firstName');
-        table.string('otherNames');
-        table.string('phone');
-        table.string('username');
+        table.string('firstName').notNullable();
+        table.string('otherNames').notNullable();
+        table.string('phone').notNullable();
+        table.string('username').notNullable();
         table.enu('gender', ['male', 'female']);
         table.string('whatsAppPhone');
         table.string('status');
         table.string('otp');
-        table.string('auth0Id'); /*@todo remove from core-api */
       })
         .then(() => console.log(`Created ${tableName} table`))
         .catch(e => console.error(`Error creating ${tableName} table`, e));

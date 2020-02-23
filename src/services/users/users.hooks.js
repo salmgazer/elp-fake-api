@@ -14,10 +14,10 @@ module.exports = {
     all: [],
     find: [ authenticate('jwt') ],
     get: [ authenticate('jwt') ],
-    create: [ async (context) => {
-      itemId(context);
-      local.hooks.hashPassword({ passwordField: 'password' });
-    }],
+    create: [
+      async (context) => itemId(context),
+      local.hooks.hashPassword('password'),
+    ],
     update: [  authenticate('jwt') ],
     patch: [  authenticate('jwt') ],
     remove: [ authenticate('jwt') ]

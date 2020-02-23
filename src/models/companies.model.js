@@ -13,8 +13,8 @@ module.exports = function (app) {
         table.increments('id');
         table.string('name');
         table.string('description');
-        table.string('ownerId');
-        table.foreign('ownerId').references('users.userId');
+        table.uuid('userId');
+        table.foreign('userId').references('users.userId');
         table
           .timestamp('createdAt')
           .notNullable()
