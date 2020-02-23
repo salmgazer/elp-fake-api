@@ -25,7 +25,7 @@ module.exports = {
       expiresIn: '1d'
     },
     local: {
-      usernameField: 'email',
+      usernameField: 'user',
       passwordField: 'password'
     },
   },

@@ -18,6 +18,7 @@ module.exports = function (app) {
         table.string('firstName');
         table.string('otherNames');
         table.string('phone');
+        table.string('username');
         table.enu('gender', ['male', 'female']);
         table.string('whatsAppPhone');
         table.string('status');
