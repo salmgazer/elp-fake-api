@@ -1,44 +1,36 @@
 
 module.exports = {
-  host: "localhost",
+  host: 'localhost',
   port: 8081,
-  public: "../public/",
+  public: '../public/',
   paginate: {
     default: 10,
     max: 50
   },
   authentication: {
-    entity: "user",
-    service: "users",
-    secret: "swATvVyZFpGiIBz1jQlqX56iLHI=",
+    entity: 'user',
+    service: 'users',
+    secret: 'swATvVyZFpGiIBz1jQlqX56iLHI=',
     authStrategies: [
-      "jwt",
-      "local"
+      'jwt',
+      'local'
     ],
     jwtOptions: {
       header: {
-        "typ": "access"
+        'typ': 'access'
       },
-      audience: "https://yourdomain.com",
-      issuer: "feathers",
-      algorithm: "HS256",
-      expiresIn: "1d"
+      audience: 'https://yourdomain.com',
+      issuer: 'feathers',
+      algorithm: 'HS256',
+      expiresIn: '1d'
     },
     local: {
-      usernameField: "email",
-      passwordField: "password"
+      usernameField: 'email',
+      passwordField: 'password'
     },
-    oauth: {
-      redirect: "/",
-      auth0: {
-        key: "<auth0 oauth key>",
-        secret: "<auth0 oauth secret>",
-        subdomain: "<auth0 subdomain>"
-      }
-    }
   },
   postgres: {
-    client: "pg",
+    client: 'pg',
     connection: {
       host : process.env.DB_HOST,
       user : process.env.DB_USER,

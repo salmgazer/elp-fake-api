@@ -8,8 +8,7 @@ const logger = require('./logger');
 const feathers = require('@feathersjs/feathers');
 const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
-
-
+const swagger = require('feathers-swagger');
 
 const middleware = require('./middleware');
 const services = require('./services');
@@ -44,6 +43,20 @@ app.configure(knex);
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
 app.configure(authentication);
+
+// do some swagger config here for now
+app.configure(swagger({
+  docsPath: '/docs',
+  uiIndex: path.join(__dirname, 'docs.html'),
+  specs: {
+    info: {
+      title: 'A test',
+      description: 'A description',
+      version: '1.0.0',
+    },
+  }
+}));
+
 // Set up our services (see `services/index.js`)
 app.configure(services);
 // Set up event channels (see channels.js)
