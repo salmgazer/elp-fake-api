@@ -51,7 +51,7 @@ app.configure(swagger({
   specs: {
     info: {
       title: 'El-Parah Fake API',
-      description: 'A description',
+      description: 'This is only for dev. Please do not use for any work meant for qa or production',
       version: '1.0.0',
     },
   }
