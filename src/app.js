@@ -50,7 +50,7 @@ app.configure(swagger({
   uiIndex: path.join(__dirname, 'docs.html'),
   specs: {
     info: {
-      title: 'A test',
+      title: 'El-Parah Fake API',
       description: 'A description',
       version: '1.0.0',
     },

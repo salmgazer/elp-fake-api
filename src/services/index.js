@@ -4,6 +4,8 @@ const productCategories = require('./product_categories/product_categories.servi
 const productGroups = require('./product_groups/product_groups.service.js');
 const products = require('./products/products.service.js');
 const manufacturers = require('./manufacturers/manufacturers.service.js');
+const companies = require('./companies/companies.service.js');
+const branches = require('./branches/branches.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -12,4 +14,6 @@ module.exports = function (app) {
   app.configure(productGroups);
   app.configure(products);
   app.configure(manufacturers);
+  app.configure(companies);
+  app.configure(branches);
 };
