@@ -19,8 +19,8 @@ module.exports = {
       header: {
         'typ': 'access'
       },
-      audience: 'https://yourdomain.com',
-      issuer: 'feathers',
+      audience: 'https://elparah.store',
+      issuer: 'elp-fake-api',
       algorithm: 'HS256',
       expiresIn: '1d'
     },
