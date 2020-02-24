@@ -32,10 +32,10 @@ module.exports = {
   postgres: {
     client: 'pg',
     connection: {
-      DB_HOST: process.env.DB_HOST,
-      DB_NAME: process.env.DB_NAME,
-      DB_PASSWORD: process.env.DB_PASSWORD,
-      DB_USER: process.env.DB_USER
+      host: process.env.DB_HOST,
+      database: process.env.DB_NAME,
+      password: process.env.DB_PASSWORD,
+      user: process.env.DB_USER
     }
   }
 };
