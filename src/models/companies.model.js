@@ -13,6 +13,8 @@ module.exports = function (app) {
         table.increments('id');
         table.string('name');
         table.string('description');
+        table.integer('businessCategoryId').notNullable();
+        table.foreign('businessCategoryId').references('business_categories.id');
         table.uuid('userId');
         table.foreign('userId').references('users.userId');
         table
