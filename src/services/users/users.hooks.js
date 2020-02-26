@@ -11,7 +11,9 @@ const itemId = context => {
 
 module.exports = {
   before: {
-    all: [],
+    all: [
+      local.hooks.protect('password')
+    ],
     find: [ authenticate('jwt') ],
     get: [ authenticate('jwt') ],
     create: [
@@ -24,7 +26,7 @@ module.exports = {
   },
 
   after: {
-    all: [],
+    all: [local.hooks.protect('password')],
     find: [],
     get: [],
     create: [],
