@@ -36,6 +36,9 @@ module.exports = {
       database: process.env.DB_NAME,
       password: process.env.DB_PASSWORD,
       user: process.env.DB_USER
-    }
+    },
+    migrations: {
+      directory: `${__dirname}/db/migrations`,
+    },
   }
 };
