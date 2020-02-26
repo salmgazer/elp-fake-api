@@ -27,7 +27,8 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "dev": "nodemon src/",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive --exit"
+    "mocha": "mocha test/ --recursive --exit",
+    "migrate": "knex migrate:latest"
   },
   "dependencies": {
     "@feathersjs/authentication": "^4.5.1",
