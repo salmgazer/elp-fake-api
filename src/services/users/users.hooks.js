@@ -15,7 +15,7 @@ module.exports = {
       local.hooks.protect('password')
     ],
     find: [ authenticate('jwt') ],
-    get: [ authenticate('jwt') ],
+    get: [ /*authenticate('jwt')*/ ],
     create: [
       async (context) => itemId(context),
       local.hooks.hashPassword('password'),
