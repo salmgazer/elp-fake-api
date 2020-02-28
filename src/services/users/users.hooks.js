@@ -14,13 +14,13 @@ module.exports = {
     all: [
       local.hooks.protect('password')
     ],
-    find: [ authenticate('jwt') ],
+    find: [ /*authenticate('jwt')*/ ],
     get: [ /*authenticate('jwt')*/ ],
     create: [
       async (context) => itemId(context),
       local.hooks.hashPassword('password'),
     ],
-    update: [  authenticate('jwt') ],
+    update: [  /* authenticate('jwt') */ ],
     patch: [  authenticate('jwt') ],
     remove: [ authenticate('jwt') ]
   },
