@@ -20,7 +20,7 @@ module.exports = {
       async (context) => itemId(context),
       local.hooks.hashPassword('password'),
     ],
-    update: [  /* authenticate('jwt') */ ],
+    update: [  local.hooks.hashPassword('password') ],
     patch: [  authenticate('jwt') ],
     remove: [ authenticate('jwt') ]
   },
